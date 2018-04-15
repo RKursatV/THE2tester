@@ -11,10 +11,12 @@ def prepare_screen():
 	os.system("cls" if os.name=='nt' else "clear")
 	print(bcolors.OKGREEN +
 	"""
- _____ _  _ ___ ___   _____ ___  __ _____ ___ ___  
-|_   _| || | __(_  | |_   _| __/' _/_   _| __| _ \ 
-  | | | >< | _| / /	| | | _|`._`. | | | _|| v / 
-  |_| |_||_|___|___|   |_| |___|___/ |_| |___|_|_\ 
+  _______ _          ___    _______        _            
+ |__   __| |        |__ \  |__   __|      | |           
+    | |  | |__   ___   ) |    | | ___  ___| |_ ___ _ __ 
+    | |  | '_ \ / _ \ / /     | |/ _ \/ __| __/ _ \ '__|
+    | |  | | | |  __// /_     | |  __/\__ \ ||  __/ |   
+    |_|  |_| |_|\___|____|    |_|\___||___/\__\___|_|       
 
 	""" + bcolors.ENDC)
 
@@ -34,16 +36,11 @@ def show_message(message, text_type=bcolors.ENDC, clear_before=0,line=0,tab=1,sp
 		print bcolors.ENDC
 		prepare_screen()
 	print ("\n" * space_before + text_type + tab * "\t" +  message+ "\n" * line)
-
 #converts given parameter to formatted querystring value and opens by default browser of the os
 def show_solution(question):
 		question = urllib.pathname2url(question)
 		a=Popen("python -m webbrowser " + "https://www.webqc.org/balance.php?reaction=" + question, stderr=PIPE, stdout=PIPE, shell=True)
 		b=Popen("python -m webbrowser " + "https://www.wolframalpha.com/input/?i=" + question, stderr=PIPE, stdout=PIPE, shell=True)
-		out, error = a.communicate()
-		out2, error2 = b.communicate()
-		print out,error,out2,error2
-		exit()
 #sample format: [<unbalanced equation>, <coefficients of its balanced version>]
 samples = [
 		["H3PO4 + (NH4)2MoO4 + HNO3 -> (NH4)3PO4(MoO3)12 + NH4NO3 + H2O", "1 12 21 1 21 12"], #Equation 0
@@ -88,15 +85,10 @@ try:
 except Exception as e:
 	show_message("It seems gcc is not installed.",bcolors.FAIL)
 	show_message("I can't work under these conditions",bcolors.FAIL)
-
 	show_message("PS: " + bcolors.ENDC + "Feel free to contact me. I would be happy to help you",bcolors.OKBLUE,0,1,1,1)
 	show_message("Exiting..." + bcolors.ENDC,bcolors.FAIL)
 	exit()
-else:
-	pass
 out, error = p.communicate()
-print out, error
-
 if (out != None or error != None) and (len(out) > 0 or len(error) > 0):
 	prepare_screen()
 	show_message("It seems your code having some trouble at compile time.", bcolors.WARNING , 0, 0, 1, 0)
@@ -129,7 +121,6 @@ if(answer):
 	bad_ent = 0
 	if answer.isdigit() == True:
 		if int(answer) == 1:
-			show_message("We're going to inspect each case carefully",bcolors.HEADER)
 			type = 1
 		elif int(answer) == 3:
 			show_message("I cannot understand you humans",bcolors.FAIL,0,1,1,0)
