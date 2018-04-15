@@ -6,7 +6,10 @@ the2.*
 __pycache__/
 *.py[cod]
 *$py.class
-
+# My works
+*.c
+the2
+the2.*
 # C extensions
 *.so
 
