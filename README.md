@@ -13,7 +13,7 @@ python tester.py
 ```
 **Attention:** This script works with python2 so calling *python* may differ to you depending on how you installed python2 to your computer.
 
-## Screenshoots
+## Screenshots
 ![](https://raw.githubusercontent.com/zararli/THE2tester/master/ss/ss1.png)
 
 ------------
