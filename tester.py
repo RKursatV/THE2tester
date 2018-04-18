@@ -81,7 +81,7 @@ if (os.path.isfile("the2.exe") == True):
 	os.remove("the2.exe")
 #compiles file using gcc
 try:
-	p=Popen(['gcc', '-Wall', '-ansi', '-pedantic-errors', '-lm', '-o', 'the2', 'the2.c'], stdout=PIPE, stderr=PIPE)
+	p=Popen(['gcc', '-Wall', '-ansi', '-pedantic-errors', '-o', 'the2', 'the2.c', '-lm'], stdout=PIPE, stderr=PIPE)
 except Exception as e:
 	show_message("It seems gcc is not installed.",bcolors.FAIL)
 	show_message("I can't work under these conditions",bcolors.FAIL)
