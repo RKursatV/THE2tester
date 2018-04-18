@@ -62,7 +62,7 @@ samples = [
 		["Fe + HC2H3O2 -> Fe(C2H3O2)3 + H2", "2 6 2 3"], #Equation 16
 		["NH3 + O2 -> NO + H2O", "4 5 4 6"], #Equation 17
 		["B2Br6 + HNO3 -> B(NO3)3 + HBr", "1 6 2 6"], #Equation 18
-		["NH4OH + KAl(SO4)2 + 12H2O -> Al(OH)3 + (NH4)2SO4 + KOH + H2O", "4 1 1 2 1 12"], #Equation 19
+		["K4Fe(CN)6 + KMnO4 + H2SO4 -> KHSO4 + Fe2(SO4)3 + MnSO4 + HNO3 + CO2 + H2O", "10 122 299 162 5 122 60 60 188"], #Equation 19
 		["C2H6O + O2 -> CO2 + H2O", "1 3 2 3"], #Equation 20
 		["Fe + HC2H3O2 -> Fe(C2H3O2)3 + H2", "2 6 2 3"] #Equation 21
 		]
